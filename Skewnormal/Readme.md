@@ -1,4 +1,4 @@
-README for Skew-Normal Mixture Fitting Code
+# README for Skew-Normal Mixture Fitting Code
 Overview
 This repository contains code for fitting skew-normal mixture models, as described in the corresponding research article. The code is designed to adjust using both 2-cluster and 3-cluster configurations. These clusters represent the Binder phase and carbide phases: in the 2-cluster model, we group binder and carbide (1 phase), and in the 3-cluster model, we distinguish binder, carbide phase 1, and carbide phase 2.
 
