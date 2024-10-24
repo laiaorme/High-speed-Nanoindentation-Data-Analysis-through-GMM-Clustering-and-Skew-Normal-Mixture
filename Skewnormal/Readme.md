@@ -1,54 +1,30 @@
-# Skew-Normal Mixture Fitting Code
+# Skew-Normal Mixture Fitting for Hardmetals
 
 ## Overview
 
-This repository contains code for fitting skew-normal mixture models, as described in the corresponding research article. The code is designed to adjust using both 2-cluster and 3-cluster configurations. These clusters represent the Binder phase and carbide phases:
-- **2-cluster model**: Binder and carbide (1 phase).
-- **3-cluster model**: Binder, carbide phase 1, and carbide phase 2.
+This repository contains code for fitting skew-normal mixture models to nanoindentation data in hardmetals. The code is designed to handle fitting with 2, 3, or 4 skew-normal distributions to represent different phases in the material. The fitting is applied separately to hardness and modulus data, and statistical criteria are used to select the optimal model. Spatial visualization of the results is also provided for X and Y coordinates.
 
-- **Binder** typically has a hardness of **5-10 GPa**.
-- **Carbides** generally show hardness between **25-30 GPa**.
+## Code Structure
 
-This code can also be extended to work with composite materials with similar properties.
+### 1. Main Functions:
+- **`mixture_skew_normal_2`, `mixture_skew_normal_3`, `mixture_skew_normal_4`**: These functions define mixtures of 2, 3, and 4 skew-normal distributions, respectively. Each function models the probability density function (PDF) for different numbers of phases. The parameters that define the distributions are: weight, location, scale, and skewness.
 
-## Code Description
+- **`error_function`**: Calculates the error between the experimental data and the model using a mixture of skew-normal distributions. This function is used to optimize parameters.
 
-- **Main Functions**:
-  The code includes functions for fitting skew-normal mixture models to hardness data. These functions optimize the model parameters (such as means, variances, and skewness) to best fit the observed data.
+### 2. Fitting the Model:
+- The fitting is done using **`curve_fit`** from the `scipy` library. It adjusts the parameters of the skew-normal distributions to minimize the difference between the fitted model and the hardness or modulus data.
+- The code applies fitting for 2, 3, and 4 distributions, separately for both hardness and modulus values.
 
-- **Values Optimized**:
-  - Mean and variance of hardness for each phase.
-  - Skewness to capture the asymmetry in the distribution of hardness values.
+### 3. Model Selection:
+- The **Bayesian Information Criterion (BIC)** and **Akaike Information Criterion (AIC)** are calculated for each number of distributions (2, 3, and 4). These criteria help in selecting the optimal number of phases for the data by balancing fit quality and model complexity. 
 
-- **Relationships**:
-  The code evaluates the distances between phases (e.g., using a distance metric \( d \)) to better differentiate clusters and refine the mixture model.
+### 4. 2D Spatial Fitting:
+- After fitting the 1D data (hardness and modulus), the code interpolates the values over a grid of X and Y positions using **`griddata`** to visualize spatial variations.
+- Contour plots are generated to show the hardness and modulus distribution across the material surface.
 
-- **Clusters**:
-  You can adjust for either:
-  - **2 clusters**: Binder and carbide phase 1.
-  - **3 clusters**: Binder, carbide phase 1, and carbide phase 2.
+## How to Use the Code
 
-## Files Included
-
-1. **Python Code File (`skew_normal_fitting.py`)**:
-   - This file contains the Python code that can be copied and run in any Python environment for fitting skew-normal mixture models.
-
-2. **Google Colab Notebook (`Skew_normal_for_hardmetals.ipynb`)**:
-   - This is a notebook designed to run in Google Colab, with all necessary code and explanations. It is ready to import into Google Colab for immediate use.
-
-## How to Import the Google Colab File
-
-To import the Google Colab file and run it, follow these steps:
-
-1. Go to [Google Colab](https://colab.research.google.com/).
-2. On the welcome page or menu, click **File**.
-3. Select **Upload notebook**.
-4. Choose the file `Skew_normal_for_hardmetals.ipynb` from your local drive and click **Open**.
-5. The notebook will be loaded into Colab, and you can run the code directly from there.
-
-## Usage
-
-- Copy the Python code from the provided `.py` file to your preferred environment or directly use the Colab notebook for execution.
-- Adjust the parameters (number of clusters, hardness values, etc.) as needed based on your material's properties.
-
-Make sure to refer to the corresponding article for more details on the methodology and applications of the skew-normal mixture model.
+1. **Prepare Data**: Load your hardness and modulus data, along with X and Y positions for each indent.
+2. **Run Fitting**: The code will fit the data using 2, 3, and 4 skew-normal distributions, optimizing the model parameters.
+3. **Generate Plots**: The code will generate 1D and 2D plots to visualize the fitted distributions and spatial variations in hardness and modulus.
+4. **Interpret Results**: Use the statistical criteria (BIC and AIC) and visualizations to interpret the number of phases in your material.
