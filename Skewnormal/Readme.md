@@ -18,7 +18,7 @@ This repository contains code for fitting skew-normal mixture models to nanoinde
 ### 3. Model Selection:
 - The **Bayesian Information Criterion (BIC)** and **Akaike Information Criterion (AIC)** are calculated for each number of distributions (2, 3, and 4). These criteria help in selecting the optimal number of phases for the data by balancing fit quality and model complexity. 
 
-### 4. 2D Spatial Fitting:
+### 4. Spatial visualization:
 - After fitting the 1D data (hardness and modulus), the code interpolates the values over a grid of X and Y positions using **`griddata`** to visualize spatial variations.
 - Contour plots are generated to show the hardness and modulus distribution across the material surface.
 
