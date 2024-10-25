@@ -1,5 +1,5 @@
 # High speed Nanoindentation Data Analysis through GMM and Skew Normal Mixture
-This is the code used in the scientific paper "High-speed Nanoindentation Data Analysis of WC-base cemented carbides through Gaussian Mixture Model Clustering and Skew-Normal Mixture: Beyond Gaussian Deconvolution": https://www.sciencedirect.com/science/article/abs/pii/S0263436824003652?via%3Dihub
+This is the code used in the scientific paper "High-speed Nanoindentation Data Analysis of WC-base cemented carbides through Gaussian Mixture Model Clustering and Skew-Normal Mixture: Beyond Gaussian Deconvolution": https://doi.org/10.1016/j.ijrmhm.2024.106917
 
 # Folder Overview
 
