@@ -3,7 +3,7 @@ This is the code used in the scientific paper "High-speed Nanoindentation Data A
 
 # Folder Overview
 
-All files are Google Colab Jupyter Notebook files (.ipynb)
+All files are Google Colab Jupyter Notebook (.ipynb)
 
 ## 1. `GMM`
 - Contains code to apply the **Gaussian Mixture Model (GMM)** from sklearn library for clustering nanoindentation data. It determines the optimal number of clusters using BIC, AIC, and modified BIC criteria. Includes:
