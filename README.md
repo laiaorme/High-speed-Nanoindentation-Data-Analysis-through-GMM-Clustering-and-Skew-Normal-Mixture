@@ -26,8 +26,9 @@ This is the code used in the scientific paper "High-speed Nanoindentation Data A
 
 This code is provided for educational and research purposes. Redistribution and modification are allowed under the following conditions:
 1. **Non-Commercial Use:** The code cannot be used for commercial purposes without explicit permission.
+  
 2. **Proper Citation:** If this code is used in academic publications, the following article must be cited appropriately:
-- L. Ortiz-Membrado, R. Benítez, L. Llanes, E. Jiménez-Piqué, High-speed Nanoindentation Data Analysis of WC-based Cemented Carbides using Gaussian Mixture Model Clustering and Skew-normal Mixture: Beyond Gaussian Deconvolution, International Journal of Refractory Metals and Hard Materials, Volume 126, 2025.
+  - L. Ortiz-Membrado, R. Benítez, L. Llanes, E. Jiménez-Piqué, High-speed Nanoindentation Data Analysis of WC-based Cemented Carbides using Gaussian Mixture Model Clustering and Skew-normal Mixture: Beyond Gaussian Deconvolution, International Journal of Refractory Metals and Hard Materials, Volume 126, 2025.
 
 # Information About the Data Format
 
