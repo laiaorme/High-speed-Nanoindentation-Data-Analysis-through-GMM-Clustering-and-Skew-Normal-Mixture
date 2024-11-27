@@ -19,9 +19,6 @@ This is the code used in the scientific paper "High-speed Nanoindentation Data A
 - **Density and Outliers**: Analyzes hardness and modulus data, filters out low-density data points, and generates scatter plots before and after filtering.
 - **Contour Plot**: Generates 2D spatial contour plots for hardness and modulus data, interpolating values over X and Y positions to visualize the surface distribution.
 
-### 4. `2D-class`
-- Contains codes for implementing the **Gaussian Mixture Model (GMM) from scratch**.
-
 ## Licensing Details
 
 This code is provided for educational and research purposes. Redistribution and modification are allowed under the following conditions:
